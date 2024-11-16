@@ -1,14 +1,17 @@
-System.out.println("\n╔════════════════════════════════╗");
-System.out.println("║         ~ Main Menu ~          ║");
-System.out.println("╚════════════════════════════════╝");
-System.out.println("┃  1. Customers                  ┃");
-System.out.println("┃  2. Venues                     ┃");
-System.out.println("┃  3. Events                     ┃");
-System.out.println("┃  4. Generate Reports           ┃");
-System.out.println("┃  5. Exit                       ┃");
-System.out.println("╰────────────────────────────────╯");
+String eventDate;
 
-System.out.print("\n→ Please select an option: ");
-choice = scan.nextInt();
-scan.nextLine();
-System.out.println("");
+        // Loop until a valid date is entered
+        while (true) {
+            System.out.print("Event Date (YYYY-MM-DD): ");
+            eventDate = scan.nextLine();
+
+            // Validate date format
+            if (eventDate.matches("^\\d{4}-\\d{2}-\\d{2}$")) {
+                System.out.println("Valid date: " + eventDate);
+                break;
+            } else {
+                System.out.println("Invalid date format. Please use YYYY-MM-DD.");
+            }
+        }
+    }
+}
